@@ -1,7 +1,38 @@
+import java.util.Arrays;
 import java.util.Random;
 
 public class OneDimensionalArrays {
     private int sumOfMultiples;
+
+    private void maxAndMinElements(int sizeOfArray){
+        Random random = new Random();
+        int [] arrayForSort = new int[sizeOfArray];
+        System.out.println("Array for sort: ");
+        for (int k = 0; k<sizeOfArray-1; k++){
+            arrayForSort[k] = random.nextInt(10);
+            System.out.println(arrayForSort[k] + "  ");
+        }
+        boolean isSorted = false;
+        int buffer;
+        while(!isSorted) {
+            isSorted = true;
+            for (int i = 0; i < arrayForSort.length-1; i++) {
+                if(arrayForSort[i] > arrayForSort[i+1]){
+                    isSorted = false;
+                    buffer = arrayForSort[i];
+                    arrayForSort[i] = arrayForSort[i+1];
+                    arrayForSort[i+1] = buffer;
+                }
+            }
+        }
+        System.out.println(Arrays.toString(arrayForSort));
+        int bufferForExchange = arrayForSort[0];
+        arrayForSort[0] = arrayForSort[sizeOfArray-1];
+        arrayForSort[sizeOfArray-1] = bufferForExchange;
+        System.out.println(Arrays.toString(arrayForSort));
+
+    }
+
 
     private void arrayOfRealNumbers(int sizeOfArrayN){
         int zeroElement = 0;
@@ -10,7 +41,7 @@ public class OneDimensionalArrays {
         Random random = new Random();
         int [] arrayForRealNumber = new int[sizeOfArrayN];
         for (int i = 0; i<arrayForRealNumber.length-1; i++){
-            arrayForRealNumber[i] = random.nextInt();
+            arrayForRealNumber[i] = random.nextInt(100);
             if (arrayForRealNumber[i] == 0){
                 zeroElement++;
             }
@@ -67,6 +98,7 @@ for (int i = minimumNumberInSequence; i<maximumNumberInSequence-1; i++){
         oneDimensionalArrays.multiples(45, 1, 20);
         oneDimensionalArrays.replacingElementsInAnArray(10, 34, 19);
         oneDimensionalArrays.arrayOfRealNumbers(10);
+        oneDimensionalArrays.maxAndMinElements(10);
     }
 
 }
