@@ -1,5 +1,31 @@
+import java.util.Random;
+
 public class OneDimensionalArrays {
     private int sumOfMultiples;
+
+    private void arrayOfRealNumbers(int sizeOfArrayN){
+        int zeroElement = 0;
+        int pozitiveElement = 0;
+        int negativeElement = 0;
+        Random random = new Random();
+        int [] arrayForRealNumber = new int[sizeOfArrayN];
+        for (int i = 0; i<arrayForRealNumber.length-1; i++){
+            arrayForRealNumber[i] = random.nextInt();
+            if (arrayForRealNumber[i] == 0){
+                zeroElement++;
+            }
+            if (arrayForRealNumber[i]>0){
+                pozitiveElement++;
+            }
+            if (arrayForRealNumber[i]<0){
+                negativeElement++;
+            }
+            System.out.println(arrayForRealNumber[i] + "\n");
+        }
+
+        System.out.println("Zero elements in array = " + zeroElement + "\nPozitive elements in array = " + pozitiveElement
+        + "\nNegative elements in array = " + negativeElement);
+    }
 
 private void replacingElementsInAnArray(int minimumNumberInSequence, int maximumNumberInSequence, int numberZ){
 int [] arrayOfNumbersInSequence = new int[maximumNumberInSequence-minimumNumberInSequence];
@@ -40,6 +66,7 @@ for (int i = minimumNumberInSequence; i<maximumNumberInSequence-1; i++){
         OneDimensionalArrays oneDimensionalArrays = new OneDimensionalArrays();
         oneDimensionalArrays.multiples(45, 1, 20);
         oneDimensionalArrays.replacingElementsInAnArray(10, 34, 19);
+        oneDimensionalArrays.arrayOfRealNumbers(10);
     }
 
 }
