@@ -1,8 +1,24 @@
 import java.util.Arrays;
 import java.util.Random;
-
+//Task 5 continue
 public class OneDimensionalArrays {
     private int sumOfMultiples;
+
+    private void rangeFromTheIntegerList(int countOfNumbers){
+        int []arrayOfIntegerNumber = new int[countOfNumbers];
+        Random random = new Random();
+        for (int i = 0; i<countOfNumbers-1; i++){
+            arrayOfIntegerNumber[i] = random.nextInt();
+
+            if (arrayOfIntegerNumber[i]>i){
+                System.out.println();
+                System.out.println(arrayOfIntegerNumber[i]);
+                System.out.println();
+            }
+            else {System.out.println("Theese number < then " + i);
+                System.out.println();}
+        }
+    }
 
     private void maxAndMinElements(int sizeOfArray){
         Random random = new Random();
@@ -99,6 +115,7 @@ for (int i = minimumNumberInSequence; i<maximumNumberInSequence-1; i++){
         oneDimensionalArrays.replacingElementsInAnArray(10, 34, 19);
         oneDimensionalArrays.arrayOfRealNumbers(10);
         oneDimensionalArrays.maxAndMinElements(10);
+        oneDimensionalArrays.rangeFromTheIntegerList(15);
     }
 
 }
