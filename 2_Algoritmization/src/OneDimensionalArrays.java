@@ -1,12 +1,32 @@
 import java.util.Arrays;
 import java.util.Random;
-//Task 5 continue
+
+//Task 7 continue
+
 public class OneDimensionalArrays {
     private int sumOfMultiples;
+    Random random = new Random();
+    private double sumOfPrimeNumbers;
+
+    private void primeNumberForIndex(int countOfMembersInThisArray){
+        double [] arrayOfRealNumbers = new double[countOfMembersInThisArray];
+
+        for (int i = 0; i<countOfMembersInThisArray; i++){
+            boolean A = ((i==2) | (i%2!=0));
+            boolean B = ((i==3) | (i%3!=0));
+            boolean C = ((i==5) | (i%5!=0));
+            boolean D = ((i==7) | (i%7!=0));
+            arrayOfRealNumbers[i] = random.nextInt();
+            if (A & B & C & D){
+                sumOfPrimeNumbers += arrayOfRealNumbers[i];
+                System.out.println(sumOfPrimeNumbers);
+            }
+        }
+    }
 
     private void rangeFromTheIntegerList(int countOfNumbers){
         int []arrayOfIntegerNumber = new int[countOfNumbers];
-        Random random = new Random();
+
         for (int i = 0; i<countOfNumbers-1; i++){
             arrayOfIntegerNumber[i] = random.nextInt();
 
@@ -116,6 +136,7 @@ for (int i = minimumNumberInSequence; i<maximumNumberInSequence-1; i++){
         oneDimensionalArrays.arrayOfRealNumbers(10);
         oneDimensionalArrays.maxAndMinElements(10);
         oneDimensionalArrays.rangeFromTheIntegerList(15);
+        oneDimensionalArrays.primeNumberForIndex(20);
     }
 
 }
