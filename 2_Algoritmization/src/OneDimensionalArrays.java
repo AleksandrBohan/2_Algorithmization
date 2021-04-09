@@ -1,12 +1,44 @@
 import java.util.Arrays;
 import java.util.Random;
 
-//Task 7 continue
+//Task 8 continue
 
 public class OneDimensionalArrays {
     private int sumOfMultiples;
     Random random = new Random();
     private double sumOfPrimeNumbers;
+
+    private void minVariable(int sizeOfArray){
+        int minElement = 0;
+        int countOfMinElements = 0;
+        int indexOfMin = 0;
+        int i;
+        int [] arrayOfIntegers = new int[sizeOfArray];
+        int[]thisIsNewArrayOfElements = new int[sizeOfArray-1];
+        for ( i = 0; i<sizeOfArray; i++){
+            arrayOfIntegers[i] = random.nextInt(10);
+            if (i==0) minElement = arrayOfIntegers[i];
+            if (minElement>arrayOfIntegers[i]){
+                minElement = arrayOfIntegers[i];
+                indexOfMin = i;
+                System.out.println("Index of min element = " + indexOfMin);
+            }
+            System.out.println(i + " index = " + arrayOfIntegers[i]);
+            System.out.println();
+        }
+        for (int j = 0; j<sizeOfArray-1; j++){
+            int k = j;
+            if(j == indexOfMin){
+            k++;
+        }
+        thisIsNewArrayOfElements[j] = arrayOfIntegers[k];
+            System.out.println("thisIsNewArrayOfElements[" + j + "] = " + thisIsNewArrayOfElements[j]);
+
+        }
+
+
+        System.out.println("minElement = " + minElement + "\nIndex = " + indexOfMin);
+    }
 
     private void maxVariables(int sizeOfArray){
         int maxElement = 0;
@@ -164,6 +196,7 @@ for (int i = minimumNumberInSequence; i<maximumNumberInSequence-1; i++){
         oneDimensionalArrays.rangeFromTheIntegerList(15);
         oneDimensionalArrays.primeNumberForIndex(20);
         oneDimensionalArrays.maxVariables(15);
+        oneDimensionalArrays.minVariable(5);
     }
 
 }
