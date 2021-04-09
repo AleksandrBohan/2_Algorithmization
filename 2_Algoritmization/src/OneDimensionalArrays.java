@@ -8,6 +8,32 @@ public class OneDimensionalArrays {
     Random random = new Random();
     private double sumOfPrimeNumbers;
 
+    private void maxVariables(int sizeOfArray){
+        int maxElement = 0;
+        int sizeOfComputedArray = sizeOfArray;
+        int []arrayForVariables = new int[sizeOfArray];
+        int [] arrayForComputed = new int[sizeOfArray];
+        int i;
+        for (i = 0; i<sizeOfArray; i++){
+            arrayForVariables[i] = i;
+
+            System.out.println("arrayForVariables [" + i + "] = " + arrayForVariables[i]);
+
+        }
+        for (int j = 0; j<sizeOfArray; j++){
+
+            sizeOfComputedArray--;
+            arrayForComputed[j] = arrayForVariables[j]+ arrayForVariables[sizeOfComputedArray];
+            if (arrayForComputed[j]>maxElement){
+                maxElement = arrayForComputed[j];
+            }
+            System.out.println("arrayForComputed [" + j + "] = " + arrayForComputed[j]);
+        }
+        System.out.println("maxElement is:  " + maxElement);
+
+
+    }
+
     private void primeNumberForIndex(int countOfMembersInThisArray){
         double [] arrayOfRealNumbers = new double[countOfMembersInThisArray];
 
@@ -137,6 +163,7 @@ for (int i = minimumNumberInSequence; i<maximumNumberInSequence-1; i++){
         oneDimensionalArrays.maxAndMinElements(10);
         oneDimensionalArrays.rangeFromTheIntegerList(15);
         oneDimensionalArrays.primeNumberForIndex(20);
+        oneDimensionalArrays.maxVariables(15);
     }
 
 }
