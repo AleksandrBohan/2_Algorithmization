@@ -1,12 +1,63 @@
 import java.util.Arrays;
 import java.util.Random;
 
-//Task 8 continue
+//Task 9 continue
 
 public class OneDimensionalArrays {
+
     private int sumOfMultiples;
     Random random = new Random();
     private double sumOfPrimeNumbers;
+
+    private void everySecondDelete(int sizeOfArray){
+        int [] arrayOfNumbers = new int[sizeOfArray];
+        for (int i = 0; i<sizeOfArray; i++){
+            arrayOfNumbers[i] = random.nextInt(50);
+            //int normalNumeration = i++;
+            if (i%2 == 0){
+                arrayOfNumbers[i] = 0;
+                System.out.println("arrayOfNumbers[" + i + "] changed by zero =   " + arrayOfNumbers[i]);
+            }
+            else{
+            System.out.println(arrayOfNumbers[i]);
+    }}}
+
+    private void repeatingNumbers(int sizeOfArray){
+        //TODO
+        int minElement = 0;
+        int [] repeatingNumbersInThisMass = new int[sizeOfArray];
+        int [] arrayOfIntegerNumbers = new int[sizeOfArray];  //1
+        for (int i = 0; i<sizeOfArray; i++){//1
+            arrayOfIntegerNumbers[i] = random.nextInt(5);
+
+        }
+        int j;
+
+        for (j = 0; j<sizeOfArray-1; j++) {
+
+            for (int k = sizeOfArray-1; k>0; k--){
+                int countOfRepeatingNumbers = 0;
+                int countOfK = 0;
+                if (arrayOfIntegerNumbers[j] == arrayOfIntegerNumbers[k] & countOfK<=1){
+                    countOfK++;
+                    repeatingNumbersInThisMass[countOfRepeatingNumbers] = arrayOfIntegerNumbers[k];
+                    System.out.println("repeatingNumbersInThisMass[" + countOfRepeatingNumbers + "] = " + repeatingNumbersInThisMass[countOfRepeatingNumbers]);
+                    countOfRepeatingNumbers++;
+
+                }
+                if (minElement>repeatingNumbersInThisMass[countOfRepeatingNumbers] | countOfRepeatingNumbers == 0 & countOfK > 0){
+                    minElement = repeatingNumbersInThisMass[countOfRepeatingNumbers];
+                }
+                }
+            }
+
+
+        System.out.println();
+        System.out.println();
+        System.out.println("Min element among repeating Numbers is: " + minElement);
+    }
+
+
 
     private void minVariable(int sizeOfArray){
         int minElement = 0;
@@ -197,6 +248,8 @@ for (int i = minimumNumberInSequence; i<maximumNumberInSequence-1; i++){
         oneDimensionalArrays.primeNumberForIndex(20);
         oneDimensionalArrays.maxVariables(15);
         oneDimensionalArrays.minVariable(5);
+        oneDimensionalArrays.repeatingNumbers(5);
+        oneDimensionalArrays.everySecondDelete(10);
     }
 
 }
