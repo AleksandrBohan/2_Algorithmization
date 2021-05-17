@@ -25,25 +25,30 @@ int count = n-1;
 
         int[][] multidimensionalArray = new int[firstElementInMultidimensionalArray]
                 [secondElementInMultidimensionalArray];
-        int j;
+
         for (int i = 0; i<firstElementInMultidimensionalArray; i++){
             System.out.println();
-           for ( j = 0; j<secondElementInMultidimensionalArray; j++){
+           for (int j = 0; j<secondElementInMultidimensionalArray; j++){
 
                    multidimensionalArray[i][j] = random.nextInt(100);
                     System.out.print(multidimensionalArray[i][j] + "  ");
                 }
 
     }
+        int count = firstElementInMultidimensionalArray-1;
+        for (int i = 0; i<firstElementInMultidimensionalArray; i++){
+            for (int j = 0; j<secondElementInMultidimensionalArray; j++)
+                if (j%2 != 0 & multidimensionalArray[0][j] >
+                        multidimensionalArray[firstElementInMultidimensionalArray-1][j]){
+                    System.out.println("True column number = " + multidimensionalArray[i][j]);
+                }
+        }
 
-        if (firstElementInMultidimensionalArray == secondElementInMultidimensionalArray){
-        System.out.println("This is element  " + multidimensionalArray[firstElementInMultidimensionalArray-1]
-        [firstElementInMultidimensionalArray-1]);
-    }}
+    }
 
     public static void main(String[] args) {
         ArraysOfArray arraysOfArray = new ArraysOfArray();
-        arraysOfArray.maxAndMinElementsInOddColumn(4, 4);
+        arraysOfArray.maxAndMinElementsInOddColumn(5, 4);
         arraysOfArray.task2(3);
     }
 
