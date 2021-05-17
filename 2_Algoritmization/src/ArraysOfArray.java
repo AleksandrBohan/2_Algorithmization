@@ -4,6 +4,28 @@ public class ArraysOfArray {
 
    private Random random = new Random(100);
 
+   private void task5(int n){
+       int count = n+1;
+
+       int [][] squareMatrix = new int[n][n];
+       System.out.println();
+       for (int i = 0; i<n; i++){
+           count--;
+           System.out.println();
+           for (int j = 0; j<count; j++){
+                   squareMatrix[i][j] = i+1;
+                 System.out.print(squareMatrix[i][j] + "  ");
+
+           }
+           int countForWhile = count;
+           while (countForWhile<n){
+               squareMatrix[i][count] = 0;
+               System.out.print(squareMatrix[i][count] + "  ");
+               countForWhile++;
+           }
+       }
+   }
+
    private void task4(int sizeOfMatrix){
 
        int [][] squareMatrix = new int[sizeOfMatrix][sizeOfMatrix];
@@ -93,6 +115,7 @@ int count = n-1;
         arraysOfArray.task2(3);
         arraysOfArray.task3(4, 3, 2);
         arraysOfArray.task4(4);
+        arraysOfArray.task5(6);
     }
 
 }
