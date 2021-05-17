@@ -5,6 +5,40 @@ public class ArraysOfArray {
 
    private Random random = new Random(100);
 
+   private void task12(int parametreOfMatrix){
+       System.out.println();
+       int [][] squareMatrix = new int[parametreOfMatrix][parametreOfMatrix];
+       for (int i = 0; i<parametreOfMatrix; i++){
+           System.out.println();
+
+           for (int j = 0; j<parametreOfMatrix; j++){
+               squareMatrix[i][j] = random.nextInt(100);
+               System.out.print(squareMatrix[i][j] + "  ");
+           }}
+
+
+
+
+
+       for (int i = 0; i<parametreOfMatrix; i++){
+           System.out.println();
+           boolean sorted = false;
+           int temp;
+           while(!sorted) {
+               sorted = true;
+           for (int j = 0; j<parametreOfMatrix-1; j++){
+               if (squareMatrix[i][j] > squareMatrix[i][j+1]) {
+               temp = squareMatrix[i][j];
+               squareMatrix[i][j] = squareMatrix[i][j+1];
+               squareMatrix[i][j+1] = temp;
+               sorted = false;
+           }
+                 System.out.print(squareMatrix[i][j] + "  ");
+           }}}
+       //TODO
+
+   }
+
    private void task11(int firstParameter, int secondParameter){
 
        int[][] multidimensionalArray = new int[firstParameter]
@@ -297,6 +331,7 @@ int count = n-1;
         arraysOfArray.task9(3,4);
         arraysOfArray.task10(4);
         arraysOfArray.task11(10,20);
+        arraysOfArray.task12(3);
     }
 
 }
