@@ -5,6 +5,40 @@ public class ArraysOfArray {
 
    private Random random = new Random(100);
 
+   private void task9(int firstParameter, int secondParameter){
+       int[][] multidimensionalArray = new int[firstParameter]
+               [secondParameter];
+
+       for (int i = 0; i<firstParameter; i++){
+           System.out.println();
+           for (int j = 0; j<secondParameter; j++){
+               multidimensionalArray[i][j] = random.nextInt(100);
+               System.out.print(multidimensionalArray[i][j] + "  ");
+           }
+
+       }
+int sumInColumn = 0;
+       int indicatorANewLine = -1;
+
+       for (int i = 0; i<firstParameter; i++){
+           System.out.println();
+           int count = 0;
+           int countLoop = 0;
+           indicatorANewLine++;
+           for (int j = 0; j<secondParameter; j++){
+               if (indicatorANewLine == i & countLoop == i){
+                  sumInColumn += multidimensionalArray[i][count];
+
+               }
+               count++;
+           }
+           System.out.println("Sum in" + i + "column = " + sumInColumn);
+
+indicatorANewLine++;
+   }
+//TODO
+   }
+
    private void task8(int firstParameter, int secondParameter){
        int[][] multidimensionalArray = new int[firstParameter]
                [secondParameter];
@@ -219,7 +253,8 @@ int count = n-1;
         arraysOfArray.task5(6);
         arraysOfArray.task6(4);
         arraysOfArray.task7(9);
-        arraysOfArray.task8(3,5);
+   //     arraysOfArray.task8(3,5);
+        arraysOfArray.task9(3,4);
     }
 
 }
