@@ -5,6 +5,44 @@ public class ArraysOfArray {
 
    private Random random = new Random(100);
 
+   private void task16(int parametreOfMatrix){
+       int [][] magicSquare = new int[parametreOfMatrix][parametreOfMatrix];
+       int number = 1;
+       int row = 0;
+       int column = parametreOfMatrix / 2;
+       int curr_row;
+       int curr_col;
+       while (number <= parametreOfMatrix * parametreOfMatrix) {
+           magicSquare[row][column] = number;
+           number++;
+           curr_row = row;
+           curr_col = column;
+           row -= 1;
+           column += 1;
+           if (row == -1) {
+               row = parametreOfMatrix - 1;
+           }
+           if (column == parametreOfMatrix) {
+               column = 0;
+           }
+           if (magicSquare[row][column] != 0) {
+               row = curr_row + 1;
+               column = curr_col;
+               if (row == -1) {
+                   row = parametreOfMatrix - 1;
+               }
+           }
+       }
+
+       for (int i = 0; i < magicSquare.length; i++) {
+           System.out.println();
+           for (int j = 0; j < magicSquare.length; j++) {
+               System.out.print(magicSquare[i][j] + " ");
+           }
+           System.out.println();
+       }
+       }
+
 private void task15(int parametreOfMatrix){
     System.out.println();
     int [][] squareMatrix = new int[parametreOfMatrix][parametreOfMatrix];
@@ -405,6 +443,7 @@ int count = n-1;
         arraysOfArray.task13(5);
         arraysOfArray.task14(4,3);
         arraysOfArray.task15(4);
+        arraysOfArray.task16(5);
     }
 
 }
