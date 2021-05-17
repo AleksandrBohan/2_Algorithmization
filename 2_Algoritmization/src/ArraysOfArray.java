@@ -1,8 +1,57 @@
 import java.util.Random;
+import java.util.Scanner;
 
 public class ArraysOfArray {
 
    private Random random = new Random(100);
+
+   private void task8(int firstParameter, int secondParameter){
+       int[][] multidimensionalArray = new int[firstParameter]
+               [secondParameter];
+
+       for (int i = 0; i<firstParameter; i++){
+           System.out.println();
+           for (int j = 0; j<secondParameter; j++){
+               multidimensionalArray[i][j] = random.nextInt(100);
+               System.out.print(multidimensionalArray[i][j] + "  ");
+           }
+
+       }
+       Scanner scanner = new Scanner(System.in);
+       int firstColumn = scanner.nextInt();
+       int secondColumn = scanner.nextInt();
+       int countForFirst = 0;
+       int countForSecond = 0;
+       int [] secondChangeArray = new int[firstParameter + secondParameter];
+       int [] arrayForChanges = new int[firstParameter + secondParameter];
+       for (int i = 0; i<firstParameter; i++){
+           System.out.println();
+       for (int j = 0; j<secondParameter; j++){
+          if (j == firstColumn){
+              arrayForChanges[countForFirst] = multidimensionalArray[i][j];
+             countForFirst++;
+             if (countForSecond>0){
+             multidimensionalArray[i][j] = secondChangeArray[countForSecond-1];
+          }}
+          else if (j == secondColumn){
+              secondChangeArray[countForSecond] = multidimensionalArray[i][j];
+              countForSecond++;
+              if (countForFirst>0){
+              multidimensionalArray[i][j] = arrayForChanges[countForFirst-1];
+          }}
+       }
+   }
+
+       for (int i = 0; i<firstParameter; i++){
+           System.out.println();
+           for (int j = 0; j<secondParameter; j++){
+              System.out.print(multidimensionalArray[i][j] + "  ");
+           }
+
+       }
+
+//TODO
+   }
 
    private void task7(int n){
        int count = 0;
@@ -170,6 +219,7 @@ int count = n-1;
         arraysOfArray.task5(6);
         arraysOfArray.task6(4);
         arraysOfArray.task7(9);
+        arraysOfArray.task8(3,5);
     }
 
 }
