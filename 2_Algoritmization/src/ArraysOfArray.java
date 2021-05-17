@@ -1,9 +1,34 @@
+import java.lang.ref.PhantomReference;
 import java.util.Random;
 import java.util.Scanner;
 
 public class ArraysOfArray {
 
    private Random random = new Random(100);
+
+   private void task14(){
+
+   }
+
+
+   private void task13(int parametreOfMatrix){
+       System.out.println();
+       int [][] squareMatrix = new int[parametreOfMatrix][parametreOfMatrix];
+       int count = 0;
+       for (int i = 0; i<parametreOfMatrix; i++){
+           System.out.println();
+           for (int j = 0; j<parametreOfMatrix; j++) {
+               squareMatrix[i][j] = random.nextInt(100);
+               System.out.print(squareMatrix[i][j] + "  ");
+           }}
+
+       for (int i = 0; i<parametreOfMatrix-1; i++){
+                     System.out.print(squareMatrix[i][count] + "  ");
+count++;
+           }
+//TODO
+   }
+
 
    private void task12(int parametreOfMatrix){
        System.out.println();
@@ -332,6 +357,7 @@ int count = n-1;
         arraysOfArray.task10(4);
         arraysOfArray.task11(10,20);
         arraysOfArray.task12(3);
+        arraysOfArray.task13(5);
     }
 
 }
