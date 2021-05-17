@@ -4,6 +4,28 @@ public class ArraysOfArray {
 
    private Random random = new Random(100);
 
+   private void task3(int sizeOfMatrix, int k, int p){
+       int [][] squareMatrix = new int[sizeOfMatrix][sizeOfMatrix];
+       for (int i = 0; i<sizeOfMatrix; i++){
+           System.out.println();
+           for (int j = 0; j<sizeOfMatrix; j++){
+               squareMatrix[i][j] = random.nextInt(50);
+               System.out.print(squareMatrix[i][j] + "  ");
+           }}
+
+            if (k<sizeOfMatrix & p<sizeOfMatrix){
+                System.out.println();
+                for (int j = 0; j<sizeOfMatrix; j++){
+                    System.out.print("This = " + squareMatrix[k][j] + "  ");
+                }
+                System.out.println();
+                for (int i = 0; i<sizeOfMatrix; i++){
+                    System.out.println("What = " + squareMatrix[i][p]);
+                }
+            }
+           }
+
+
     private void task2(int n){
         int [][] squareMatrix = new int[n][n];
                for (int i = 0; i<n; i++){
@@ -50,6 +72,7 @@ int count = n-1;
         ArraysOfArray arraysOfArray = new ArraysOfArray();
         arraysOfArray.maxAndMinElementsInOddColumn(5, 4);
         arraysOfArray.task2(3);
+        arraysOfArray.task3(4, 3, 2);
     }
 
 }
