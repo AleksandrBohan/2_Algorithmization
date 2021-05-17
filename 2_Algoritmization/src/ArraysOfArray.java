@@ -5,7 +5,28 @@ public class ArraysOfArray {
 
    private Random random = new Random(100);
 
-
+private void task15(int parametreOfMatrix){
+    System.out.println();
+    int [][] squareMatrix = new int[parametreOfMatrix][parametreOfMatrix];
+    int maxElement = 0;
+    for (int i = 0; i<parametreOfMatrix; i++){
+        System.out.println();
+        for (int j = 0; j<parametreOfMatrix; j++) {
+            squareMatrix[i][j] = random.nextInt(100);
+            if (maxElement < squareMatrix[i][j]){
+            maxElement = squareMatrix[i][j];}
+            System.out.print(squareMatrix[i][j] + "  ");
+        }}
+    System.out.println();
+    for (int i = 0; i<parametreOfMatrix; i++){
+        System.out.println();
+        for (int j = 0; j<parametreOfMatrix; j++) {
+            if (squareMatrix[i][j] % 2 != 0){
+                squareMatrix[i][j] = maxElement;
+            }
+            System.out.print(squareMatrix[i][j] + "  ");
+        }}
+}
 
    private void task14(int m, int n){
 
@@ -383,6 +404,7 @@ int count = n-1;
         arraysOfArray.task12(3);
         arraysOfArray.task13(5);
         arraysOfArray.task14(4,3);
+        arraysOfArray.task15(4);
     }
 
 }
