@@ -5,6 +5,23 @@ public class ArraysOfArray {
 
    private Random random = new Random(100);
 
+   private void task10(int n){
+       int [][] squareMatrix = new int[n][n];
+       for (int i = 0; i<n; i++){
+           System.out.println();
+           for (int j = 0; j<n; j++){
+               squareMatrix[i][j] = (int) (Math.random()*200 - 100);
+               System.out.print(squareMatrix[i][j] + "  ");
+           }}
+       int count = 0;
+       for (int i = 0; i<n; i++){
+           if (squareMatrix[i][count] > 0){
+           System.out.println("This " + i + " diagonal pozitive element = " + squareMatrix[i][count]);
+
+       }
+       count++;
+   }}
+
    private void task9(int firstParameter, int secondParameter){
        int[][] multidimensionalArray = new int[firstParameter]
                [secondParameter];
@@ -255,6 +272,7 @@ int count = n-1;
         arraysOfArray.task7(9);
    //     arraysOfArray.task8(3,5);
         arraysOfArray.task9(3,4);
+        arraysOfArray.task10(4);
     }
 
 }
