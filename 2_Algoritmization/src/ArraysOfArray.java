@@ -1,4 +1,3 @@
-import java.lang.ref.PhantomReference;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -6,8 +5,33 @@ public class ArraysOfArray {
 
    private Random random = new Random(100);
 
-   private void task14(){
 
+
+   private void task14(int m, int n){
+
+       if (m>n){
+       System.out.println();
+       int [][] squareMatrix = new int[m][n];
+       int count = 0;
+       for (int i = 0; i<m; i++){
+           System.out.println();
+           for (int j = 0; j<n; j++) {
+               if (count > i+1){
+               squareMatrix[i][j] = 0;
+                   System.out.print(squareMatrix[i][j] + "  ");
+
+       } else {
+                   squareMatrix[i][j] = 1;
+                   System.out.print(squareMatrix[i][j] + "  ");
+           }
+               if (squareMatrix[i][j] == 1){
+                   count++;
+               }
+       }
+       }
+       }else System.out.println("Wrong matrix!");
+
+       //TODO
    }
 
 
@@ -358,6 +382,7 @@ int count = n-1;
         arraysOfArray.task11(10,20);
         arraysOfArray.task12(3);
         arraysOfArray.task13(5);
+        arraysOfArray.task14(4,3);
     }
 
 }
