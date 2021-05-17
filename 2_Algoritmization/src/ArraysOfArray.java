@@ -41,6 +41,8 @@ public class ArraysOfArray {
            }
            System.out.println();
        }
+
+       //TODO сделать Debug!!
        }
 
 private void task15(int parametreOfMatrix){
