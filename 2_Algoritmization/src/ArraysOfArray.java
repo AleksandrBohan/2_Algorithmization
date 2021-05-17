@@ -4,6 +4,25 @@ public class ArraysOfArray {
 
    private Random random = new Random(100);
 
+   private void task4(int sizeOfMatrix){
+
+       int [][] squareMatrix = new int[sizeOfMatrix][sizeOfMatrix];
+       for (int i = 0; i<sizeOfMatrix; i++){
+           System.out.println();
+           int countForColumn = 1;
+           int countForStrings = sizeOfMatrix;
+           for (int j = 0; j<sizeOfMatrix; j++){
+               if (i % 2 == 0){
+               squareMatrix[i][j] = countForColumn;
+               System.out.print(squareMatrix[i][j] + "  ");
+               countForColumn++;
+           }
+               else {squareMatrix[i][j] = countForStrings;
+               System.out.print(squareMatrix[i][j] + "  ");
+               countForStrings--;
+           }
+   }}}
+
    private void task3(int sizeOfMatrix, int k, int p){
        int [][] squareMatrix = new int[sizeOfMatrix][sizeOfMatrix];
        for (int i = 0; i<sizeOfMatrix; i++){
@@ -73,6 +92,7 @@ int count = n-1;
         arraysOfArray.maxAndMinElementsInOddColumn(5, 4);
         arraysOfArray.task2(3);
         arraysOfArray.task3(4, 3, 2);
+        arraysOfArray.task4(4);
     }
 
 }
