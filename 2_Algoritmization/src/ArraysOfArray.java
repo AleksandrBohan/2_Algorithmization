@@ -5,6 +5,29 @@ public class ArraysOfArray {
 
    private Random random = new Random(100);
 
+   private void task11(int firstParameter, int secondParameter){
+
+       int[][] multidimensionalArray = new int[firstParameter]
+               [secondParameter];
+
+       for (int i = 0; i<firstParameter; i++){
+           System.out.println();
+           int count = 0;
+           for (int j = 0; j<secondParameter; j++){
+               if (count == 5){
+                   System.out.print("  This line " + i + "  consist of 5th fives!)   ");
+               }
+               multidimensionalArray[i][j] = random.nextInt(15);
+               if (multidimensionalArray[i][j] == 5){
+                   count++;
+               }
+               System.out.print(multidimensionalArray[i][j] + "  ");
+           }
+
+       }
+
+   }
+
    private void task10(int n){
        int [][] squareMatrix = new int[n][n];
        for (int i = 0; i<n; i++){
@@ -273,6 +296,7 @@ int count = n-1;
    //     arraysOfArray.task8(3,5);
         arraysOfArray.task9(3,4);
         arraysOfArray.task10(4);
+        arraysOfArray.task11(10,20);
     }
 
 }
