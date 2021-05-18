@@ -5,6 +5,50 @@ import java.util.Random;
 public class One_dimensionalArraysAndSorting {
     private Random random = new Random();
 
+    private void task7(int sizeOfFirstArr, int sizeOfSecondArr,
+                       int firstNumberOfFirstArr, int firstNumberOfSecondArr){
+
+        int count = 0;
+
+        int thirdSize = sizeOfFirstArr + sizeOfSecondArr;
+
+        int[] firstArray = new int[sizeOfFirstArr];
+        int[] secondArray = new int[sizeOfSecondArr];
+
+        int [] thirdArray = new int[thirdSize];
+
+        for (int i = 0; i < sizeOfFirstArr; i++) {
+            firstArray[i] = firstNumberOfFirstArr;
+            firstNumberOfFirstArr++;
+            System.out.println(firstArray[i] + "  ");
+        }
+
+        System.out.println();
+        for (int j = 0; j < sizeOfSecondArr; j++) {
+            secondArray[j] = firstNumberOfSecondArr;
+            firstNumberOfSecondArr++;
+            System.out.println(secondArray[j] + "  ");
+        }
+        System.out.println();
+        for (int i = 0; i < sizeOfSecondArr; i++){
+
+            for (int j = 0; j < sizeOfFirstArr; j++){
+                thirdArray[count] = secondArray[i];
+              if (firstArray[j] > secondArray[i]){
+                thirdArray[count] = firstArray[j];
+
+                  }
+              count++;
+              }}
+        System.out.println();
+        for (int i = 0; i < thirdSize; i++) {
+            System.out.print(thirdArray[i] + "  ");
+
+        }
+//TODO
+            }
+
+
 private void task6(int sizeOfArray){
     System.out.println();
     int [] arrayForSorting = new int[sizeOfArray];
@@ -206,6 +250,7 @@ private void task6(int sizeOfArray){
         one_dimensionalArraysAndSorting.task3(4);
         one_dimensionalArraysAndSorting.task4(5);
         one_dimensionalArraysAndSorting.task5(4);
-       one_dimensionalArraysAndSorting.task6(5);
+        one_dimensionalArraysAndSorting.task6(5);
+        one_dimensionalArraysAndSorting.task7(3,5,2,4);
     }
 }
