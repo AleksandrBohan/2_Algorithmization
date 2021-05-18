@@ -1,5 +1,63 @@
+import java.util.Random;
 
 public class DecompositionWithMethods {
+    Random random = new Random();
+
+    
+
+    private void task4(int n){
+    int firstPoint;
+    int secondPoint;
+        int [] arrayFirstPoint = new int[n];
+        int [] arraySecondPoint = new int[n];
+
+        for (int i = 0; i < n; i++){
+            firstPoint = random.nextInt(100);
+            secondPoint = random.nextInt(50);
+            arrayFirstPoint[i] = firstPoint;
+            arraySecondPoint[i] = secondPoint;
+            System.out.print(arrayFirstPoint[i] + " ; " + arraySecondPoint[i] + "    ");
+        }
+
+            int maxVal;
+            System.out.println();
+
+            for (int i = 0; i<n; i++){
+                for (int j = n-1; j>0; j--){
+                    maxVal = arrayFirstPoint[i];
+                    if (maxVal < arrayFirstPoint[j] & j>i){
+                        maxVal = arrayFirstPoint[j];
+                        arrayFirstPoint[j] = arrayFirstPoint[i];
+                        arrayFirstPoint[i] = maxVal;
+                    }
+                }
+
+            }
+
+        int maxNumber;
+        System.out.println();
+
+        for (int i = 0; i<n; i++){
+            for (int j = n-1; j>0; j--){
+                maxNumber = arrayFirstPoint[i];
+                if (maxNumber < arrayFirstPoint[j] & j>i){
+                    maxNumber = arrayFirstPoint[j];
+                    arrayFirstPoint[j] = arrayFirstPoint[i];
+                    arrayFirstPoint[i] = maxNumber;
+                }
+            }
+
+        }
+
+        for (int i = 0; i < n; i++){
+            System.out.println(arrayFirstPoint[i] + "  ; " + arraySecondPoint[i]);
+        }
+ int maxDistanceOnFirstCoordinat = arrayFirstPoint[0] - arrayFirstPoint[n-1];
+        System.out.println(maxDistanceOnFirstCoordinat);
+//TODO
+        }
+
+
 
     private void task3(int side){
 double square = 6 * theAreaOfATrueTriangle(side);
@@ -58,5 +116,6 @@ if (NOK(a, b) == (a*b)/NOD(a,b)){
         decompositionWithMethods.task1(5,7);
         decompositionWithMethods.task2(7,14,28,42);
         decompositionWithMethods.task3(5);
+        decompositionWithMethods.task4(6);
     }
 }
