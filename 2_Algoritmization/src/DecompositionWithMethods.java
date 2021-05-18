@@ -3,6 +3,21 @@ import java.util.Random;
 public class DecompositionWithMethods {
     Random random = new Random();
 
+    private void task7(){
+
+for (int i = 1; i<10; i++){
+    int multiplyNumber = 1;
+    if (i % 2 != 0){
+        for (int j = 1; j <= i; j++){
+            multiplyNumber *= j;
+
+           // multiplyNumber++;
+        }
+        System.out.println(i + " Fibonachi number = " + multiplyNumber);
+    }
+}
+    }
+
     private void task6(int a, int b, int c){
         int count = 0;
         //int [] easyNumbers = new int[10];
@@ -162,5 +177,6 @@ if (NOK(a, b) == (a*b)/NOD(a,b)){
         decompositionWithMethods.task4(6);
         decompositionWithMethods.task5(6);
         decompositionWithMethods.task6(1, 6, 7);
+        decompositionWithMethods.task7();
     }
 }
