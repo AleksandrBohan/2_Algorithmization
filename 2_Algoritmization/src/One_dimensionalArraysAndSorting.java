@@ -1,7 +1,39 @@
+import org.w3c.dom.ls.LSOutput;
+
 import java.util.Random;
 
 public class One_dimensionalArraysAndSorting {
     private Random random = new Random();
+
+private void task6(int sizeOfArray){
+    System.out.println();
+    int [] arrayForSorting = new int[sizeOfArray];
+    int valueInStack = 0;
+    System.out.println();
+    for (int i = 0; i<sizeOfArray; i++){
+        arrayForSorting[i] =random.nextInt(100);
+        System.out.print(arrayForSorting[i] + "  ");
+    }
+    int h = 1;
+    int n = sizeOfArray;
+    while (h < n / 3)
+        h = 3 * h + 1;
+
+    while (h >= 1) {
+        for (int i = h; i < sizeOfArray; i++) {
+            for (int j = i; j >= h && arrayForSorting[j] > arrayForSorting[j - h]; j -= h) {
+                int temp = arrayForSorting[j];
+                arrayForSorting[j] = arrayForSorting[j - h];
+                arrayForSorting[j - h] = temp;
+            }
+        }
+        h = h / 3;
+    }
+    System.out.println();
+    for (int i = 0; i<sizeOfArray; i++){
+       System.out.print(arrayForSorting[i] + "  ");
+    }
+}
 
     public int binarySearch(int arr[], int firstElement, int lastElement, int elementToSearch){
         // условие прекращения
@@ -34,7 +66,23 @@ public class One_dimensionalArraysAndSorting {
             arrayForSorting[i] =random.nextInt(100);
             System.out.print(arrayForSorting[i] + "  ");
         }
-//TODO не понял условие!!
+        int key;
+        for (int i = 1; i < sizeOfArray; i++) {
+            key = arrayForSorting[i];
+            int j = i - 1;
+            while (j >= 0 && arrayForSorting[j] < key) {
+                arrayForSorting[j + 1] = arrayForSorting[j];
+                j = j - 1;
+            }
+            arrayForSorting[j + 1] = key;
+        }
+        System.out.println();
+        for (int i = 0; i<sizeOfArray; i++){
+            System.out.print(arrayForSorting[i] + "  ");
+        }
+
+        //TODO разобраться с алгоритмом и связать с двоичным поиском!!!
+
     }
 
     private void task4(int sizeOfArray){
@@ -157,5 +205,7 @@ public class One_dimensionalArraysAndSorting {
         one_dimensionalArraysAndSorting.task2(3,4,4,2);
         one_dimensionalArraysAndSorting.task3(4);
         one_dimensionalArraysAndSorting.task4(5);
+        one_dimensionalArraysAndSorting.task5(4);
+       one_dimensionalArraysAndSorting.task6(5);
     }
 }
