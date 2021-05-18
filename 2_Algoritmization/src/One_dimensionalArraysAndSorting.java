@@ -3,6 +3,31 @@ import java.util.Random;
 public class One_dimensionalArraysAndSorting {
     private Random random = new Random();
 
+    private void task3(int sizeOfArray){
+        int [] arrayForSorting = new int[sizeOfArray];
+        int maxValue = 0;
+        System.out.println();
+        for (int i = 0; i<sizeOfArray; i++){
+            arrayForSorting[i] = random.nextInt(100);
+            System.out.print(arrayForSorting[i] + "  ");
+        }
+
+        for (int i = 0; i<sizeOfArray; i++){
+            for (int j = sizeOfArray-1; j>0; j--){
+                maxValue = arrayForSorting[i];
+                if (maxValue < arrayForSorting[j] & j>i){
+                    maxValue = arrayForSorting[j];
+                    arrayForSorting[j] = arrayForSorting[i];
+                    arrayForSorting[i] = maxValue;
+                }
+            }
+        }
+        System.out.println();
+        for (int i = 0; i<sizeOfArray; i++){
+          System.out.print(arrayForSorting[i] + "  ");
+        }
+    }
+
     private void task2(int sizeOfFirstArr, int sizeOfSecondArr,
                        int firstNumberOfFirstArr, int firstNumberOfSecondArr) {
 
@@ -32,6 +57,7 @@ public class One_dimensionalArraysAndSorting {
 
             }
         }
+        //TODO
     }
 
     private void task1(int sizeOfFirstArr, int sizeOfSecondArr, int naturalNumberK){
@@ -68,5 +94,6 @@ public class One_dimensionalArraysAndSorting {
         One_dimensionalArraysAndSorting one_dimensionalArraysAndSorting = new One_dimensionalArraysAndSorting();
         one_dimensionalArraysAndSorting.task1(3,4,2);
         one_dimensionalArraysAndSorting.task2(3,4,4,2);
+        one_dimensionalArraysAndSorting.task3(4);
     }
 }
