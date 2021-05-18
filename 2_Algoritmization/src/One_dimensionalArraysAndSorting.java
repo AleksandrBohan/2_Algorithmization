@@ -3,12 +3,39 @@ import java.util.Random;
 public class One_dimensionalArraysAndSorting {
     private Random random = new Random();
 
+    private void task4(int sizeOfArray){
+        System.out.println();
+        int [] arrayForSorting = new int[sizeOfArray];
+        int valueInStack = 0;
+        System.out.println();
+        for (int i = 0; i<sizeOfArray; i++){
+            arrayForSorting[i] =random.nextInt(100);
+            System.out.print(arrayForSorting[i] + "  ");
+        }
+
+        for (int i = 0; i < sizeOfArray; i++)
+            for (int j = i+1; j<sizeOfArray; j++){
+                valueInStack = arrayForSorting[j];
+                if (arrayForSorting[i]>valueInStack){
+                    valueInStack = arrayForSorting[i];
+                    arrayForSorting[i] = arrayForSorting[j];
+                    arrayForSorting[j] = valueInStack;
+                }
+            }
+        System.out.println();
+        for (int i = 0; i<sizeOfArray; i++){
+             System.out.print(arrayForSorting[i] + "  ");
+        }
+    }
+
     private void task3(int sizeOfArray){
         int [] arrayForSorting = new int[sizeOfArray];
         int maxValue = 0;
+        int valueInArray = 0;
         System.out.println();
         for (int i = 0; i<sizeOfArray; i++){
-            arrayForSorting[i] = random.nextInt(100);
+            arrayForSorting[i] = valueInArray;
+            valueInArray++;
             System.out.print(arrayForSorting[i] + "  ");
         }
 
@@ -95,5 +122,6 @@ public class One_dimensionalArraysAndSorting {
         one_dimensionalArraysAndSorting.task1(3,4,2);
         one_dimensionalArraysAndSorting.task2(3,4,4,2);
         one_dimensionalArraysAndSorting.task3(4);
+        one_dimensionalArraysAndSorting.task4(5);
     }
 }
