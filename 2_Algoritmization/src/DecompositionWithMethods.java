@@ -3,7 +3,31 @@ import java.util.Random;
 public class DecompositionWithMethods {
     Random random = new Random();
 
-    
+    private void task5(int sizeOfArray){
+        int [] arrayForChoiсe = new int[sizeOfArray];
+        int max;
+        System.out.println();
+
+        for (int i = 0; i < sizeOfArray; i++){
+            arrayForChoiсe[i] = random.nextInt(100);
+            System.out.print(arrayForChoiсe[i] + "  ");
+        }
+        System.out.println();
+        for (int i = 0; i<sizeOfArray; i++){
+            for (int j = sizeOfArray-1; j>0; j--){
+                max = arrayForChoiсe[i];
+                if (max < arrayForChoiсe[j] & j>i){
+                    max = arrayForChoiсe[j];
+                    arrayForChoiсe[j] = arrayForChoiсe[i];
+                    arrayForChoiсe[i] = max;
+                }
+            }
+        }
+        for (int i = 0; i < sizeOfArray; i++){
+            System.out.print(arrayForChoiсe[i] + "  ");
+        }
+        System.out.println("We want to have this number choiced   " + arrayForChoiсe[2]);
+    }
 
     private void task4(int n){
     int firstPoint;
@@ -117,5 +141,6 @@ if (NOK(a, b) == (a*b)/NOD(a,b)){
         decompositionWithMethods.task2(7,14,28,42);
         decompositionWithMethods.task3(5);
         decompositionWithMethods.task4(6);
+        decompositionWithMethods.task5(6);
     }
 }
