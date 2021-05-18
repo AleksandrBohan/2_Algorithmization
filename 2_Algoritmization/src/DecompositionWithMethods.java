@@ -1,6 +1,16 @@
 
 public class DecompositionWithMethods {
 
+    private void task3(int side){
+double square = 6 * theAreaOfATrueTriangle(side);
+        System.out.println("The square = " + square);
+    }
+
+    private double theAreaOfATrueTriangle(int side){
+        double square = (Math.pow(side,2) * Math.sqrt(3))/4;
+        return square;
+    }
+
     private void task2(int a, int b, int c, int d){
         int divNumber = 1;
         while (a % divNumber != 0 & b % divNumber !=0
@@ -47,5 +57,6 @@ if (NOK(a, b) == (a*b)/NOD(a,b)){
         DecompositionWithMethods decompositionWithMethods = new DecompositionWithMethods();
         decompositionWithMethods.task1(5,7);
         decompositionWithMethods.task2(7,14,28,42);
+        decompositionWithMethods.task3(5);
     }
 }
