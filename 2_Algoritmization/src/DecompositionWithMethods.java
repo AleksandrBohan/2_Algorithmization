@@ -3,6 +3,29 @@ import java.util.Random;
 public class DecompositionWithMethods {
     Random random = new Random();
 
+    private void task8(int sizeOfArray){
+        int [] arrayForSumm = new int[sizeOfArray];
+        for (int i = 0; i < sizeOfArray; i++){
+            arrayForSumm[i] = random.nextInt(100);
+            System.out.print(arrayForSumm[i] + "  ");
+        }
+    }
+
+    private int sumOf3thElements(int [] arr, int sizeOfArray){
+        int step = 3;
+        int sumInArray = 0;
+        int parts = sizeOfArray/3;
+        for (int i = 1; i < parts; i++){
+            if (i == 1){
+                for (int j = 0; j<=step; j++){
+                   sumInArray += arr[j];
+                }
+                System.out.println("Sum = " + sizeOfArray);
+            }
+        }
+    return 0;}
+
+
     private void task7(){
 
 for (int i = 1; i<10; i++){
@@ -13,7 +36,7 @@ for (int i = 1; i<10; i++){
 
            // multiplyNumber++;
         }
-        System.out.println(i + " Fibonachi number = " + multiplyNumber);
+        System.out.println(i + " Factorial number = " + multiplyNumber);
     }
 }
     }
