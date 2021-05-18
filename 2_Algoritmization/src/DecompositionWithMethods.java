@@ -3,6 +3,25 @@ import java.util.Random;
 public class DecompositionWithMethods {
     Random random = new Random();
 
+    private void task6(int a, int b, int c){
+        int count = 0;
+        //int [] easyNumbers = new int[10];
+        for (int i = 1; i < 10; i++){
+            if (a % i == 0 | b % i == 0 | c % i == 0){
+              //easyNumbers[count] = i;
+                System.out.println("This number is  " + i);
+                count++;
+                if (count == 3){
+                    System.out.println("This is easy numbers: " + a + "  " + b + "  " + "  " + c);
+                }
+                else System.out.println("These numbers aren't easy!!");
+            }
+
+        }
+//TODO
+    }
+
+
     private void task5(int sizeOfArray){
         int [] arrayForChoiсe = new int[sizeOfArray];
         int max;
@@ -125,7 +144,7 @@ if (NOK(a, b) == (a*b)/NOD(a,b)){
  private int NOK(int a, int b){
      int c = 1;
 
-     while (c%a != 0 & c%b != 0){
+     while (c % a != 0 & c % b != 0){
          if (a == 1 | b == 1){
              break;
          }
@@ -142,5 +161,6 @@ if (NOK(a, b) == (a*b)/NOD(a,b)){
         decompositionWithMethods.task3(5);
         decompositionWithMethods.task4(6);
         decompositionWithMethods.task5(6);
+        decompositionWithMethods.task6(1, 6, 7);
     }
 }
