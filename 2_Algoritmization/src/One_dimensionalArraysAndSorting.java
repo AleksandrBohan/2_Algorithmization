@@ -5,6 +5,47 @@ import java.util.Random;
 public class One_dimensionalArraysAndSorting {
     private Random random = new Random();
 
+    private void task8(int sizeOfArr){
+        System.out.println();
+        int [] p = new int[sizeOfArr];
+        int [] q = new int[sizeOfArr];
+        int [] pDivQ = new int[sizeOfArr];
+        int multiply = 1;
+
+        for (int i = 0; i < sizeOfArr; i++){
+            p[i] = random.nextInt(100);
+            q[i] = random.nextInt(100);
+            System.out.println(p[i] + " / " + q[i]);
+            }
+        for (int i = 0; i < sizeOfArr; i++){
+            multiply *= q[i];
+            System.out.println(multiply);
+        }
+        for (int i = 0; i < sizeOfArr; i++){
+            p[i] *= (multiply/q[i]);
+        }
+
+        int maxVal;
+        int valueInArray = 0;
+        System.out.println();
+
+        for (int i = 0; i<sizeOfArr; i++){
+            for (int j = sizeOfArr-1; j>0; j--){
+                maxVal = p[i];
+                if (maxVal < p[j] & j>i){
+                    maxVal = p[j];
+                    p[j] = p[i];
+                    p[i] = maxVal;
+                }
+            }
+
+    }
+        System.out.println();
+    for (int i = 0; i < sizeOfArr; i++){
+        System.out.println(p[i] + " / " + multiply);
+    }
+    }
+
     private void task7(int sizeOfFirstArr, int sizeOfSecondArr,
                        int firstNumberOfFirstArr, int firstNumberOfSecondArr){
 
@@ -251,6 +292,7 @@ private void task6(int sizeOfArray){
         one_dimensionalArraysAndSorting.task4(5);
         one_dimensionalArraysAndSorting.task5(4);
         one_dimensionalArraysAndSorting.task6(5);
-        one_dimensionalArraysAndSorting.task7(3,5,2,4);
+      //  one_dimensionalArraysAndSorting.task7(3,5,2,4);
+        one_dimensionalArraysAndSorting.task8(6);
     }
 }
