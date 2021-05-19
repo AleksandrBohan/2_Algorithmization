@@ -9,21 +9,37 @@ public class DecompositionWithMethods {
             arrayForSumm[i] = random.nextInt(100);
             System.out.print(arrayForSumm[i] + "  ");
         }
+        sumOf3thElements(arrayForSumm, sizeOfArray);
+        //TODO
     }
 
-    private int sumOf3thElements(int [] arr, int sizeOfArray){
+    private void sumOf3thElements(int [] arr, int sizeOfArray){
         int step = 3;
-        int sumInArray = 0;
-        int parts = sizeOfArray/3;
+        int parts = (int) Math.floor(sizeOfArray/2);
         for (int i = 1; i < parts; i++){
+            int sumInArray = 0;
             if (i == 1){
                 for (int j = 0; j<=step; j++){
                    sumInArray += arr[j];
+
                 }
                 System.out.println("Sum = " + sizeOfArray);
+                step += 2;
             }
+            else{
+                for (int j = step; j < step + 2; j++){
+                    sumInArray += arr[j];
+
+                }
+            }
+
+            System.out.println("Sum of these elements which index from  " + (step-2) +
+                    " till " + step + " = " + sumInArray);
+
+
         }
-    return 0;}
+
+    }
 
 
     private void task7(){
@@ -201,5 +217,6 @@ if (NOK(a, b) == (a*b)/NOD(a,b)){
         decompositionWithMethods.task5(6);
         decompositionWithMethods.task6(1, 6, 7);
         decompositionWithMethods.task7();
+        decompositionWithMethods.task8(9);
     }
 }
