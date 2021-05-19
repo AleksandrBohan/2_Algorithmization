@@ -4,17 +4,67 @@ public class DecompositionWithMethods {
     Random random = new Random();
     int exponentiating;
 
+    private void task16(int sizeOfArray){
+        System.out.println();
+        int sum = 0;
+        int [] noEvenArray = new int[sizeOfArray];
+        for (int i = 0; i < sizeOfArray; i++){
+            noEvenArray[i] = random.nextInt(10000);
+            if (oddYearTotalsNumbers(noEvenArray[i]) == true){
+                sum += noEvenArray[i];
+            }
+        }
+        evenNumbers(sum);
+        System.out.println("sum = " + sum);
+
+    }
+
+    private int evenNumbers(int number){
+        int count = 0;
+        String string = String.valueOf(number);
+        int size = string.length();
+        char[] array = string.toCharArray();
+        for (int i = 0; i < size; i++){
+            String transitLineOne =  String.valueOf(array[i]);
+            int realNumberOne = Integer.valueOf(transitLineOne);
+            if (realNumberOne % 2 == 0){
+                count++;
+            }
+        }
+        System.out.println(count + "  numbers are even!!");
+
+        return number;
+    }
+
+    private boolean oddYearTotalsNumbers(int number){
+        boolean indicator;
+        int count = 0;
+        String string = String.valueOf(number);
+        int size = string.length();
+        char[] array = string.toCharArray();
+                   for (int i = 0; i < size; i++){
+                String transitLineOne =  String.valueOf(array[i]);
+                int realNumberOne = Integer.valueOf(transitLineOne);
+                   if (realNumberOne % 2 == 0){
+                    count++;
+                }
+            }
+        if (count > 0){
+            System.out.println("This number is wrong!");
+            indicator = false;
+        } else {
+            System.out.println("Number " + number + "All right!");
+            indicator = true;
+        }
+        return indicator;
+    }
+
     private void task15(int number, int sizeOfArray){
         int [] growNumbersArray = new int[sizeOfArray];
         for (int i = 0; i < sizeOfArray; i++){
-
-            if (i == 1 | i == 4 | i == 7){
-                growNumbersArray[i] = 1234567;
-                System.out.println(growNumbersArray[i]);
-            }
-            else {growNumbersArray[i] = random.nextInt(1000000);
+          growNumbersArray[i] = random.nextInt(1000000);
             System.out.println(growNumbersArray[i]);}
-        }
+
         for (int i = 0; i < sizeOfArray; i++){
         growNumbers(growNumbersArray[i]);
     }
@@ -374,5 +424,6 @@ if (NOK(a, b) == (a*b)/NOD(a,b)){
         decompositionWithMethods.task13(9);
         decompositionWithMethods.task14(7, 153, 9);
         decompositionWithMethods.task15(123456, 10);
+        decompositionWithMethods.task16(10);
     }
 }
