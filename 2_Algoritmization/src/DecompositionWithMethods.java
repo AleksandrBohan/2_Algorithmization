@@ -3,6 +3,14 @@ import java.util.Random;
 public class DecompositionWithMethods {
     Random random = new Random();
 
+    private void task10(int n){
+        String string = String.valueOf(n);
+        char[] array = string.toCharArray();
+        for (int i = 0; i<array.length; i++){
+            System.out.println(array[i]);
+        }
+    }
+
     private void task9(int x, int y, int z, int t){
 int squareOfTrapezeFirst = ((y + z) / 2) * x;
         System.out.println("Square of trapeze first = " + squareOfTrapezeFirst);
@@ -224,5 +232,6 @@ if (NOK(a, b) == (a*b)/NOD(a,b)){
         decompositionWithMethods.task7();
         decompositionWithMethods.task8(9);
         decompositionWithMethods.task9(2,4,5,8);
+        decompositionWithMethods.task10(12345);
     }
 }
