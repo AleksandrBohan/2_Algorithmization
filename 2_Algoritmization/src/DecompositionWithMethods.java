@@ -3,6 +3,34 @@ import java.util.Random;
 public class DecompositionWithMethods {
     Random random = new Random();
 
+    private void task12(int k, int n){
+        int [] a = new int[n];
+
+        for (int i = 0; i < n; i++){
+            int loopRandomNumber = random.nextInt(n);
+            System.out.println("This random number = " + loopRandomNumber);
+            if (sumOfNumbers(loopRandomNumber) == k){
+                a[i] = loopRandomNumber;
+                System.out.println("Number  " + a[i]);
+            }
+
+        }
+
+
+    }
+
+    private int sumOfNumbers(int number){
+        int sum = 0;
+        String string = String.valueOf(number);
+        char[] array = string.toCharArray();
+        for (int i = 0; i<array.length; i++){
+            String s =  String.valueOf(array[i]);
+            sum += Integer.valueOf(s);
+          //  System.out.println(array[i]);
+          //  System.out.println("Sum = " + sum);
+            }
+        return sum;
+    }
     private void task11(int firstNumber, int secondNumber){
         System.out.println();
         String firstCount = String.valueOf(firstNumber);
@@ -245,5 +273,6 @@ if (NOK(a, b) == (a*b)/NOD(a,b)){
         decompositionWithMethods.task9(2,4,5,8);
         decompositionWithMethods.task10(12345);
         decompositionWithMethods.task11(9999, 1234);
+        decompositionWithMethods.task12(5, 15);
     }
 }
