@@ -4,6 +4,45 @@ public class DecompositionWithMethods {
     Random random = new Random();
     int exponentiating;
 
+    private void task15(int number, int sizeOfArray){
+        int [] growNumbersArray = new int[sizeOfArray];
+        for (int i = 0; i < sizeOfArray; i++){
+
+            if (i == 1 | i == 4 | i == 7){
+                growNumbersArray[i] = 1234567;
+                System.out.println(growNumbersArray[i]);
+            }
+            else {growNumbersArray[i] = random.nextInt(1000000);
+            System.out.println(growNumbersArray[i]);}
+        }
+        for (int i = 0; i < sizeOfArray; i++){
+        growNumbers(growNumbersArray[i]);
+    }
+    }
+
+        private int growNumbers(int number){
+            int count = 0;
+            String string = String.valueOf(number);
+            int size = string.length();
+            char[] array = string.toCharArray();
+            for (int j = 0; j < size; j++)
+            for (int i = j+1; i < size; i++){
+                String transitLineOne =  String.valueOf(array[i]);
+                int realNumberOne = Integer.valueOf(transitLineOne);
+                String transitLineTwo =  String.valueOf(array[j]);
+                int realNumberTwo = Integer.valueOf(transitLineTwo);
+            if (realNumberTwo >= realNumberOne){
+                    count++;
+                }
+        }
+            if (count > 0){
+                System.out.println("This number is wrong!");
+            } else System.out.println("All right!");
+
+            return number;
+        }
+
+
        private void task14(int k, int number, int sizeOfArray) {
            if (k < sizeOfArray){
            int [] armstrongArray = new int[sizeOfArray];
@@ -334,5 +373,6 @@ if (NOK(a, b) == (a*b)/NOD(a,b)){
         decompositionWithMethods.task12(5, 15);
         decompositionWithMethods.task13(9);
         decompositionWithMethods.task14(7, 153, 9);
+        decompositionWithMethods.task15(123456, 10);
     }
 }
