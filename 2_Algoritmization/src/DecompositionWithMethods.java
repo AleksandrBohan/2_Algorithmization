@@ -3,6 +3,28 @@ import java.util.Random;
 public class DecompositionWithMethods {
     Random random = new Random();
 
+    private void task13(int sizeOfArray){
+        int [] arrayForEquals = new int[sizeOfArray];
+        for (int i = 0; i < sizeOfArray; i++){
+            arrayForEquals[i] = random.nextInt(5);
+            System.out.println(arrayForEquals[i]);
+        }
+        findNumbers(3, arrayForEquals);
+    }
+
+    private void findNumbers(int n, int [] arr){
+        if (n > 2){
+            for (int j = n; j < n * 2; j++)
+                for (int i = n+1; i < n * 2; i++){
+                     if (arr[i] == arr[j] - 2 | arr[j] == arr[i] - 2){
+                         System.out.println("Twins numbers  " + arr[j] +
+                                 "  and  " + arr[i]);
+                     }
+                    System.out.println("Twins numbers haven't found!!");
+}
+        }
+    }
+
     private void task12(int k, int n){
         int [] a = new int[n];
 
@@ -274,5 +296,6 @@ if (NOK(a, b) == (a*b)/NOD(a,b)){
         decompositionWithMethods.task10(12345);
         decompositionWithMethods.task11(9999, 1234);
         decompositionWithMethods.task12(5, 15);
+        decompositionWithMethods.task13(9);
     }
 }
