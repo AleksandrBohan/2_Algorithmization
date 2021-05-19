@@ -4,6 +4,29 @@ public class DecompositionWithMethods {
     Random random = new Random();
     int exponentiating;
 
+    private void task17(int number){
+        System.out.println();
+        System.out.println(number);
+        while (number != 0){
+        int result = number - sumOfNumbersInNumber(number);
+        number = result;
+            System.out.println(number);
+    }}
+
+    private int sumOfNumbersInNumber(int number){
+        int sum = 0;
+        String string = String.valueOf(number);
+        int size = string.length();
+        char[] array = string.toCharArray();
+        for (int i = 0; i < size; i++){
+            String transitLineOne =  String.valueOf(array[i]);
+            int realNumberOne = Integer.valueOf(transitLineOne);
+            sum += realNumberOne;
+    }
+        System.out.println(sum);
+    return sum;
+    }
+
     private void task16(int sizeOfArray){
         System.out.println();
         int sum = 0;
@@ -425,5 +448,6 @@ if (NOK(a, b) == (a*b)/NOD(a,b)){
         decompositionWithMethods.task14(7, 153, 9);
         decompositionWithMethods.task15(123456, 10);
         decompositionWithMethods.task16(10);
+        decompositionWithMethods.task17(300);
     }
 }
