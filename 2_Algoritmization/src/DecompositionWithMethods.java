@@ -3,6 +3,17 @@ import java.util.Random;
 public class DecompositionWithMethods {
     Random random = new Random();
 
+    private void task11(int firstNumber, int secondNumber){
+        System.out.println();
+        String firstCount = String.valueOf(firstNumber);
+        String secondCount = String.valueOf(secondNumber);
+        if (firstCount.length() > secondCount.length()){
+            System.out.println("First number " + firstNumber + " > second number " + secondNumber);
+        }
+        else System.out.println("First number " + firstNumber + " < second number " + secondNumber);
+
+    }
+
     private void task10(int n){
         String string = String.valueOf(n);
         char[] array = string.toCharArray();
@@ -233,5 +244,6 @@ if (NOK(a, b) == (a*b)/NOD(a,b)){
         decompositionWithMethods.task8(9);
         decompositionWithMethods.task9(2,4,5,8);
         decompositionWithMethods.task10(12345);
+        decompositionWithMethods.task11(9999, 1234);
     }
 }
