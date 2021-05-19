@@ -2,6 +2,41 @@ import java.util.Random;
 
 public class DecompositionWithMethods {
     Random random = new Random();
+    int exponentiating;
+
+       private void task14(int k, int number, int sizeOfArray) {
+           if (k < sizeOfArray){
+           int [] armstrongArray = new int[sizeOfArray];
+        createArray(armstrongArray);
+        for (int i = 1; i < k; i++) {
+            exponentiatingAndSplitNumber(armstrongArray[i]);
+            if (armstrongArray[i] == exponentiating) {
+                System.out.println("It is Armstrong's number! " + number);
+            }
+            else System.out.println("It isn't Armstrong's number!!");
+        }
+    }
+       else System.out.println("Input other k or sizeOfArray (k < sizeOfArray)");
+       }
+
+    private void createArray(int [] arr){
+           for (int i = 0; i<arr.length; i++){
+                   arr[i] = random.nextInt(1000);
+               System.out.println(arr[i]);
+
+    }}
+    private int exponentiatingAndSplitNumber(int number){
+        exponentiating = 0;
+        String string = String.valueOf(number);
+        char[] array = string.toCharArray();
+        for (int i = 0; i < array.length; i++){
+            String s =  String.valueOf(array[i]);
+            exponentiating += Math.pow(Integer.valueOf(s), array.length);
+
+        }
+        return exponentiating;
+
+    }
 
     private void task13(int sizeOfArray){
         int [] arrayForEquals = new int[sizeOfArray];
@@ -23,6 +58,7 @@ public class DecompositionWithMethods {
                     System.out.println("Twins numbers haven't found!!");
 }
         }
+        else System.out.println("Number n must be more then 2!!");
     }
 
     private void task12(int k, int n){
@@ -297,5 +333,6 @@ if (NOK(a, b) == (a*b)/NOD(a,b)){
         decompositionWithMethods.task11(9999, 1234);
         decompositionWithMethods.task12(5, 15);
         decompositionWithMethods.task13(9);
+        decompositionWithMethods.task14(7, 153, 9);
     }
 }
